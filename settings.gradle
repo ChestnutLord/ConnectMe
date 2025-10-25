@@ -1,1 +1,3 @@
-rootProject.name = 'ConnectMe'
+rootProject.name = "connectme"
+
+include("user-service", "match-service", "notification-service")
