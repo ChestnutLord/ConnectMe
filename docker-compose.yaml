@@ -49,6 +49,15 @@ services:
 #      postgres-notification:
 #        condition: service_healthy
 
+  gateway-service:
+    build: ./gateway-service
+    ports:
+      - "8084:8080"
+    depends_on:
+      - user-service
+      - match-service
+#      - notification-service
+
   postgres-match:
     image: postgres:16
     container_name: postgres-match
