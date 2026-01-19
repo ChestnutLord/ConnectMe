@@ -22,3 +22,6 @@ spring:
     url: ${SPRING_DATASOURCE_URL}
     user: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
+
+user:
+  url: http://user-service:8080
