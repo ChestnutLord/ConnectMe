@@ -11,6 +11,8 @@ dependencies {
     implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-api:2.6.0'
+    implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:5.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
