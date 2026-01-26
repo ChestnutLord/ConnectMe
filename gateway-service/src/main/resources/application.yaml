@@ -1,6 +1,14 @@
 spring:
   application:
     name: gateway-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8181/realms/spring-microservices-security-realm
+          jwk-set-uri: http://keycloak:8080/realms/spring-microservices-security-realm/protocol/openid-connect/certs
+          audiences:
+            - account
 
 springdoc:
   swagger-ui:
