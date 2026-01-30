@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    bootstrap-servers: kafka-1:9090,kafka-2:9090,kafka-3:9090
+
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id: esteem-match-events
+      properties:
+        spring.json.trusted.packages: "*"

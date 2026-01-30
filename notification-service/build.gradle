@@ -1,0 +1,18 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+description = 'notification-service'
+
+bootJar {
+    archiveFileName = 'notification-service.jar'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.kafka:spring-kafka'
+    implementation project(":core")
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
+}
+
