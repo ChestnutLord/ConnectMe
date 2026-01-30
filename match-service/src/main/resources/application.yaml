@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: dev
   datasource:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
@@ -7,7 +9,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: true
     defer-datasource-initialization: false
 
   sql:
