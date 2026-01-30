@@ -13,12 +13,12 @@ import java.util.List;
 public interface UserMapper {
     User toModel(UserDto userDto);
 
-    User toModel(UserCreateUpdateDto userCreateUpdateDto); //TODO do not need it
+    User toModel(UserCreateUpdateDto userCreateUpdateDto);
 
     UserDto toDto(User user);
 
     @Mapping(target = "id", ignore = true)
-    User toCrateUpdateModel(UserCreateUpdateDto userCreateUpdateDto); //TODO do not need it
+    User toCrateUpdateModel(UserCreateUpdateDto userCreateUpdateDto);
 
 
     List<User> toListModel(List<UserDto> userDto);
