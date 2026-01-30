@@ -51,8 +51,7 @@
 1. Клонируйте репозиторий:
 
 ```shell
-git clone <repository-url>
-cd ConnectMe
+git clone https://github.com/ChestnutLord/ConnectMe
 ```
 
 2. Скопируйте файл `.env.example` в `.env`:
