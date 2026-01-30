@@ -1,11 +1,15 @@
 package com.dimidev.matchservice.dto.esteem;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-public class  EsteemCreateUpdateDto {
+@NoArgsConstructor
+@AllArgsConstructor
+public class EsteemCreateUpdateDto {
 
     private Long likedId;
 
