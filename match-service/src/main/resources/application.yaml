@@ -23,6 +23,24 @@ spring:
     user: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
 
+  kafka:
+    bootstrap-servers: kafka-1:9090,kafka-2:9090,kafka-3:9090
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      properties:
+        delivery:
+          timeout:
+            ms: 20000 # максимальное время на повторы отправки. сколько по времени ждём акнолеждмент от всех инсинк реплик
+        linger:
+          ms: 0
+        request:
+          timeout:
+            request:
+              ms: 10000 # как долго ждём акноледжмент отправив сообщение. потом таймаут и делаем ритрай
+
 user:
   url: http://user-service:8080
 
@@ -39,12 +57,10 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 3
         automaticTransitionFromOpenToHalfOpenEnabled: true
         minimum-number-of-calls: 5
-
   timelimiter:
     instances:
       userServiceCircuitBreaker:
         timeout-duration: 3s
-
   retry:
     instances:
       userServiceCircuitBreaker:
